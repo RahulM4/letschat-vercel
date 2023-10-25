@@ -58,7 +58,7 @@ const GroupChatModal = ({ children }) => {
       "Content-type" : "appilication/json"
         },
       };
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(`https://letschat-vercel-api.vercel.app/api/user?search=${search}`, config);
      
 
       setLoading(false);
@@ -107,7 +107,7 @@ const GroupChatModal = ({ children }) => {
     try {
       const config = { headers: { "Content-type": "application/json" } };
       const { data } = await axios.post(
-        `/api/chat/group`,
+        `https://letschat-vercel-api.vercel.app/api/chat/group`,
         {
           name: groupChatName,
           users: JSON.stringify(selectedUsers.map((u) => u._id)),

@@ -60,7 +60,7 @@ const Signup = () => {
         },
       };
 
-      const { data } = await axios.post("/api/user", formData, config);
+      const { data } = await axios.post("https://letschat-vercel-api.vercel.app/api/user", formData, config);
 
       if (data) {
         toast({

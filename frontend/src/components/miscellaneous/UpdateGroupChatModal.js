@@ -48,7 +48,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
          "Content-type" : "appilication/json",
         },
       };
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(`https://letschat-vercel-api.vercel.app/api/user?search=${search}`, config);
       console.log(data);
       setLoading(false);
       setSearchResult(data);
@@ -76,7 +76,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         },
       };
       const { data } = await axios.put(
-        `/api/chat/rename`,
+        `https://letschat-vercel-api.vercel.app/api/chat/rename`,
         {
           chatId: selectedChat._id,
           chatName: groupChatName,
@@ -131,7 +131,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
       setLoading(true);
      
       const { data } = await axios.put(
-        `/api/chat/groupadd`,
+        `https://letschat-vercel-api.vercel.app/api/chat/groupadd`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -174,7 +174,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
       setLoading(true);
       const config = { headers : {"Content-type" : "application/json"} };
       const { data } = await axios.put(
-        `/api/chat/groupremove`,
+        `https://letschat-vercel-api.vercel.app/api/chat/groupremove`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
